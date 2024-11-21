@@ -1,0 +1,28 @@
+Input:  string1: Dotnet , string2: Hotstar
+Output:  o - 1, t - 2
+
+string str1 = "Dotnet";
+string str2 = "Hotstar";
+
+  List<char> lst1 = str1.ToList();
+  List<char> lst2 = str2.ToList();
+  Dictionary<char, int> commonCharsDic = new Dictionary<char, int>();
+
+  foreach (char c in lst1)
+  {
+      if (lst2.Contains(c))
+      {
+          int val;
+          if (commonCharsDic.TryGetValue(c, out val))
+              commonCharsDic[c] = val + 1;
+          else
+              commonCharsDic.Add(c, 1);
+
+          lst2.Remove(c);
+      }
+  }
+
+  foreach (var item in commonCharsDic)
+      Console.WriteLine("{0}-{1}", item.Key, item.Value);
+
+ // Output: o-1 , t-2
