@@ -1,0 +1,13 @@
+string str = "", reverse = "";
+  int len = 0;
+  Console.WriteLine("Enter a String");
+  str = Console.ReadLine();
+  
+  len = str.Length - 1;
+  while (len >= 0)
+  {
+      reverse = reverse + str[len];
+      len--;
+  }
+  
+  Console.WriteLine("Reverse String is {0}", reverse);
