@@ -1,0 +1,20 @@
+public class Program
+    {
+       public void Print()
+       {
+           int a, b;
+           a = b = 1;
+           while (b <= 1000)
+           {
+               Console.WriteLine(b);
+               b = a + b;
+               a = b - a;
+           }
+       }
+        static void Main(string[] args)
+        {
+            Program p = new Program();
+            p.Print();
+            Console.ReadKey();
+        }
+    }
