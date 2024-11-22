@@ -1,0 +1,15 @@
+//https://softmindit.blogspot.com/2023/10/arrays-in-c.html
+
+// There are multiple ways to create an array in C#. Here are a few examples.
+
+int[] numbers = new int[5];
+int[] intArray = new int[] {1, 2, 3, 4, 5};
+
+// or Simply
+int[] intArray = {1, 2, 3, 4, 5};
+var myArray = new int[] {1, 2, 3, 4, 5};
+
+//Sorting Array in C#
+int[] intArray = new int[] { 9, 2, 4, 3, 1, 5 };
+Array.Sort(intArray);  // By Default sort in ASC order
+Array.Reverse(intArray);  // sort in Desc order
