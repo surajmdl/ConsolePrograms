@@ -1,0 +1,52 @@
+using System;
+
+// Define the Exercise10 class
+public class Exercise10  
+{  
+    // Main method - entry point of the program
+    public static void Main() 
+    {
+        string str; // Declare a string variable to hold user input
+        int[] ch_fre = new int[255]; // Declare an integer array to store character frequencies
+        int i = 0, max, l; // Declare variables for iteration, maximum frequency, string length, and ASCII code
+
+        // Prompt the user to input a string
+        Console.Write("\n\nFind maximum occurring character in a string :\n");
+        Console.Write("--------------------------------------------------\n"); 	
+        Console.Write("Input the string: ");
+        str = Console.ReadLine(); // Read the input string from the user	
+        l = str.Length; // Get the length of the input string
+
+        // Initialize character frequency array with 0 for all characters
+        for (i = 0; i < 255; i++)
+        {
+            ch_fre[i] = 0;
+        }
+
+        // Calculate frequency of each character in the input string
+        i = 0;
+        while (i < l)
+        {
+            int ascii = (int)str[i]; // Get ASCII value of the character
+            ch_fre[ascii] += 1; // Increment the frequency count for the respective character
+            i++;
+        }
+
+        max = 0; // Initialize variable to store the index of the character with maximum frequency
+
+        // Find the character with the highest frequency by comparing character frequencies
+        for (i = 0; i < 255; i++)
+        {
+            if (i != 32) // Excluding space character from consideration
+            {
+                if (ch_fre[i] > ch_fre[max]) // Check if the current character frequency is greater than the maximum
+                {
+                    max = i; // Update the index of the character with the maximum frequency
+                }
+            }
+        }
+
+        // Display the character with the highest frequency and its frequency count
+        Console.Write("The Highest frequency of character '{0}' is appearing for number of times: {1} \n\n", (char)max, ch_fre[max]);
+    }
+}
